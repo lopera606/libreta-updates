@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Libreta — La libreta de escritorio que cronometra y factura por ti</title>
+  <meta name="description" content="Libreta es la app de escritorio para pymes que captura tareas sin fricción, las organiza por cliente y proyecto, cronometra el tiempo y lo convierte en factura. Con un asistente que te propone cómo aprovechar el día." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#">
+        <span class="nav__logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.6a2 2 0 0 0-.59-1.41l-4.6-4.6A2 2 0 0 0 13.4 2z"/><path d="M8 18h1"/><path d="M8 14h6"/><path d="M8 10h8"/></svg>
+        </span>
+        Libreta
+      </a>
+      <nav class="nav__links" aria-label="Secciones">
+        <a href="#funciones">Funciones</a>
+        <a href="#asistente">Asistente</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+      <a class="btn btn--primary btn--sm" href="#descargar">Descargar gratis</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <span class="pill">Para pymes, autónomos y equipos que facturan por horas</span>
+        <h1>La libreta de escritorio que <em>cronometra y factura</em> por ti</h1>
+        <p class="hero__lede">
+          Apunta una tarea en un segundo — escrita o hablada —, dale al cronómetro y sigue con lo tuyo.
+          Libreta la organiza por cliente y proyecto, suma el tiempo y te lo deja listo para facturar.
+          Y cuando tienes un hueco, te propone qué quitarte de encima.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="#descargar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Descargar para Windows
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#precios">Ver precios</a>
+        </div>
+        <p class="hero__note">Gratis para 1 usuario · Sin tarjeta · Tus datos viven en tu equipo</p>
+      </div>
+
+      <!-- Mockup de la app en CSS puro -->
+      <div class="hero__mock" aria-hidden="true">
+        <div class="mock">
+          <div class="mock__titlebar"><i></i><i></i><i></i></div>
+          <div class="mock__body">
+            <div class="mock__rail">
+              <div class="mock__brand"></div>
+              <div class="mock__navitem mock__navitem--on"></div>
+              <div class="mock__navitem"></div>
+              <div class="mock__navitem"></div>
+              <div class="mock__navitem"></div>
+            </div>
+            <div class="mock__main">
+              <div class="mock__search"></div>
+              <div class="mock__h1"></div>
+              <div class="mock__task" style="--mc:#b1561e"><span class="mock__chk"></span><div><b></b><u style="width:52%"></u></div><span class="mock__play"></span></div>
+              <div class="mock__task mock__task--run" style="--mc:#2d7ad6"><span class="mock__chk"></span><div><b style="width:64%"></b><u style="width:38%"></u></div><span class="mock__timer">00:12:47</span></div>
+              <div class="mock__task" style="--mc:#12a594"><span class="mock__chk"></span><div><b style="width:48%"></b><u style="width:30%"></u></div><span class="mock__play"></span></div>
+              <div class="mock__task" style="--mc:#e8633e"><span class="mock__chk"></span><div><b style="width:70%"></b><u style="width:44%"></u></div><span class="mock__play"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mock__toast">
+          <span class="mock__toast-ico">✓</span>
+          <div><strong>Factura de mayo lista</strong><br/><small>21 h 15 m · 1.168 € · Bodegas Lustau</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PASOS ============ -->
+  <section class="steps">
+    <div class="container steps__grid">
+      <div class="step">
+        <span class="step__num">1</span>
+        <h3>Apunta sin parar lo que haces</h3>
+        <p>«Mañana 2h reunión Lustau». Con el atajo global o hablando: Libreta entiende el cliente, la fecha y la estimación.</p>
+      </div>
+      <div class="step">
+        <span class="step__num">2</span>
+        <h3>Dale al cronómetro</h3>
+        <p>Un clic y a trabajar. El tiempo se apunta solo en la tarea, el proyecto y el cliente correctos. ¿Se te olvidó? Añade horas a mano.</p>
+      </div>
+      <div class="step">
+        <span class="step__num">3</span>
+        <h3>Factura en un clic</h3>
+        <p>Cada cliente con su tarifa. Al final del mes, el tiempo ya está sumado, valorado en euros y exportable a Excel o PDF.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FUNCIONES ============ -->
+  <section class="features" id="funciones">
+    <div class="container">
+      <h2 class="section-title">Todo lo que tu equipo necesita.<br/>Nada de lo que sobra.</h2>
+      <div class="features__grid">
+        <article class="feature" style="--fc:#4f5bd5">
+          <span class="feature__ico">⚡</span>
+          <h3>Captura sin fricción</h3>
+          <p>Atajo global desde cualquier programa. Escribes en tu idioma y Libreta lo convierte en tarea con cliente, proyecto, fecha y estimación.</p>
+        </article>
+        <article class="feature" style="--fc:#2d7ad6">
+          <span class="feature__ico">⏱️</span>
+          <h3>Cronómetro y horas manuales</h3>
+          <p>Cronómetro en vivo a un clic desde la tarea, visible siempre en la barra. Y entrada manual para lo que apuntaste en un pósit.</p>
+        </article>
+        <article class="feature" style="--fc:#1f9d6b">
+          <span class="feature__ico">🧾</span>
+          <h3>De horas a factura</h3>
+          <p>Tarifa por hora por cliente. Informes por proyecto, cliente y periodo, con el importe calculado. Export a Excel y PDF.</p>
+        </article>
+        <article class="feature" style="--fc:#c8841a">
+          <span class="feature__ico">🗂️</span>
+          <h3>Cliente → Proyecto → Tarea</h3>
+          <p>La jerarquía que usa tu gestoría y tu cabeza. Cada tarea con su color de cliente: de un vistazo sabes de quién es cada cosa.</p>
+        </article>
+        <article class="feature" style="--fc:#d6356f">
+          <span class="feature__ico">📥</span>
+          <h3>Bandeja de recados</h3>
+          <p>«Llamó Paco, urgente». Tus compañeros te dejan recados que llegan ordenados y estructurados. Tú decides: tarea, archivar o descartar. Nada se pierde.</p>
+        </article>
+        <article class="feature" style="--fc:#7a4fd0">
+          <span class="feature__ico">🔌</span>
+          <h3>Local primero, sin cortes</h3>
+          <p>Vive en tu bandeja del sistema, arranca con Windows y funciona sin internet. Si la red se cae, tú sigues; se sincroniza al volver.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ASISTENTE ============ -->
+  <section class="assistant" id="asistente">
+    <div class="container assistant__inner">
+      <div class="assistant__copy">
+        <span class="pill pill--invert">Asistente inteligente</span>
+        <h2>«Tienes 30 minutos. Quítate estas 3 tareas cortas.»</h2>
+        <p>
+          El planificador de Libreta conoce tus vencimientos, tus prioridades y — esto es lo bueno —
+          <strong>cuánto tardas de verdad</strong> comparado con lo que estimas. Con eso te propone un plan
+          realista para el día, y lo replanifica según avanza. Tú aceptas, ajustas o rechazas: mandas tú.
+        </p>
+        <ul class="assistant__list">
+          <li>Propone qué hacer en cada hueco, por importancia y encaje</li>
+          <li>Aprende tu factor real: si estimas 1&nbsp;h y tardas 1&nbsp;h 10&nbsp;m, lo tiene en cuenta</li>
+          <li>Redacta la descripción de la factura a partir de los tiempos</li>
+          <li>Resumen semanal legible para el responsable del equipo</li>
+        </ul>
+      </div>
+      <div class="assistant__demo" aria-hidden="true">
+        <div class="chat">
+          <div class="chat__bubble chat__bubble--user">Tengo 30 min antes de la reunión</div>
+          <div class="chat__bubble chat__bubble--ai">
+            <strong>Con 30 min libres, yo haría:</strong>
+            <div class="chat__task"><span style="--mc:#b1561e"></span>Programar newsletter <em>23 m</em></div>
+            <div class="chat__task"><span style="--mc:#2d7ad6"></span>Responder al Ayto. <em>algo justo</em></div>
+            <small>Te sobran 7 m · La pasarela de pago no cabe (2 h 19 m)</small>
+          </div>
+          <div class="chat__actions"><span>✓ Empezar</span><span>☆ A mi día</span><span>✕ Otra cosa</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRECIOS ============ -->
+  <section class="pricing" id="precios">
+    <div class="container">
+      <h2 class="section-title">Un precio claro. Sin letra pequeña.</h2>
+      <p class="pricing__sub">Sin mínimos de usuarios, sin cuota de alta, sin permanencia. IVA no incluido.</p>
+      <div class="pricing__grid">
+
+        <article class="price">
+          <h3>Solo</h3>
+          <div class="price__amount">0 €<span>/siempre</span></div>
+          <p class="price__pitch">Para trabajar tú solo, en tu equipo.</p>
+          <ul>
+            <li>1 usuario, 100 % local</li>
+            <li>Tareas por cliente y proyecto</li>
+            <li>Cronómetro + horas manuales</li>
+            <li>Planificador del día (lógica local)</li>
+            <li>Sin sincronización ni panel de equipo</li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="#descargar">Descargar gratis</a>
+        </article>
+
+        <article class="price price--star">
+          <span class="price__badge">El de los equipos</span>
+          <h3>Pro</h3>
+          <div class="price__amount">6,50 €<span>/usuario/mes</span></div>
+          <p class="price__pitch">Facturado anualmente · 7,90 € si prefieres mes a mes.</p>
+          <ul>
+            <li>Todo lo de Solo, más:</li>
+            <li>Sincronización entre equipos</li>
+            <li>Panel del responsable en tiempo real</li>
+            <li>Bandeja de recados del equipo</li>
+            <li>Asistente inteligente (captura hablada, factura redactada, resumen semanal)</li>
+            <li>Informes y export a Excel / PDF</li>
+          </ul>
+          <a class="btn btn--primary btn--block" href="#descargar">Probar 30 días gratis</a>
+        </article>
+
+        <article class="price">
+          <h3>Empresa <small>self-hosted</small></h3>
+          <div class="price__amount"><small>desde</small> 490 €<span>/año</span></div>
+          <p class="price__pitch">Instalado en tu servidor. Tus datos, en tu casa.</p>
+          <ul>
+            <li>Licencia anual fija (hasta 10 usuarios; 890 €/año hasta 25)</li>
+            <li>Todo lo de Pro, en tu infraestructura</li>
+            <li>La IA con tu propia clave de API (control total del gasto)</li>
+            <li>Instalación y puesta en marcha incluidas</li>
+            <li>Soporte cercano, en tu idioma</li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="mailto:hola@libretadesk.com?subject=Libreta%20Empresa">Hablamos →</a>
+        </article>
+
+      </div>
+      <p class="pricing__foot">
+        ¿Gestoría, estudio o agencia con más de 25 personas? <a href="mailto:hola@libretadesk.com">Escríbenos</a> y lo ajustamos.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="container faq__inner">
+      <h2 class="section-title">Preguntas que nos hacen siempre</h2>
+
+      <details>
+        <summary>¿Dónde viven mis datos?</summary>
+        <p>En tu equipo. Libreta es <strong>local primero</strong>: todo funciona sin internet y la sincronización es un extra, no una obligación. Con el plan Empresa, además, el servidor es el tuyo — tus datos no salen de tu casa.</p>
+      </details>
+      <details>
+        <summary>¿Esto sirve para vigilar a los empleados?</summary>
+        <p>No, y no queremos que sirva. Libreta es una herramienta de <strong>productividad y facturación</strong>: el cronómetro lo controla cada persona y el panel del responsable muestra el avance del trabajo, no capturas de pantalla ni actividad del teclado. Diseñada para encajar con el RGPD y el Estatuto de los Trabajadores.</p>
+      </details>
+      <details>
+        <summary>¿Funciona sin internet?</summary>
+        <p>Sí. Anota, cronometra y planifica offline. Cuando vuelve la conexión, los cambios se sincronizan solos en segundo plano.</p>
+      </details>
+      <details>
+        <summary>¿Tengo que usar la parte de inteligencia artificial?</summary>
+        <p>No. El planificador básico funciona con lógica local, sin IA y sin coste. El asistente (captura hablada, factura redactada, resúmenes) va incluido en Pro; en Empresa self-hosted usas tu propia clave de API y controlas el gasto al céntimo.</p>
+      </details>
+      <details>
+        <summary>¿En qué sistemas funciona?</summary>
+        <p>La app de escritorio es para <strong>Windows</strong> (10/11, 64 bits). El panel del responsable es web y funciona en cualquier navegador. macOS y Linux están en la hoja de ruta.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si dejo de pagar Pro?</summary>
+        <p>Nada dramático: tus datos son tuyos y siguen en tu equipo. Pierdes la sincronización, el panel y el asistente, pero la app local sigue funcionando con el plan Solo.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ DESCARGA / CTA FINAL ============ -->
+  <section class="cta" id="descargar">
+    <div class="container cta__inner">
+      <h2>Deja de imaginártelo. Pruébalo.</h2>
+      <p>Instálalo en dos minutos. Gratis para 1 usuario, sin tarjeta.</p>
+      <div class="cta__buttons">
+        <a class="btn btn--invert btn--lg" href="https://github.com/lopera606/libreta-updates/releases/latest/download/Libreta-Setup.exe">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Descargar Libreta para Windows
+        </a>
+      </div>
+      <p class="cta__note">Versión 0.1.0 · Windows 10/11 x64 · se actualiza sola · También disponible en <a href="https://github.com/lopera606/libreta-updates/releases/latest" target="_blank" rel="noopener">versión portable</a></p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <strong>Libreta</strong>
+        <p>La libreta de escritorio que cronometra y factura por ti.<br/>Hecha en Andalucía con mucho café. ☕</p>
+      </div>
+      <div class="footer__col">
+        <h4>Producto</h4>
+        <a href="#funciones">Funciones</a>
+        <a href="#asistente">Asistente</a>
+        <a href="#precios">Precios</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <a href="mailto:hola@libretadesk.com">hola@libretadesk.com</a>
+        <a href="#faq">Preguntas frecuentes</a>
+      </div>
+    </div>
+    <div class="container footer__legal">
+      © <span id="y">2026</span> Libreta · Todos los precios sin IVA · Los datos de las capturas son ficticios
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
