@@ -50,7 +50,7 @@
 
   <script>
     // La verdad de la licencia vive en el Worker (/api). Esta pagina solo la muestra.
-    const API_BASE = '/api'; // mismo dominio cuando el Worker enruta libretadesk.com/api/*
+    const API_BASE = 'https://api.libretadesk.com/api'; // el Worker vive en el subdominio api.
     const params = new URLSearchParams(location.search);
     const sessionId = params.get('session_id');
     const cont = document.getElementById('estado');
