@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Gracias! · Libreta</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    .gr { max-width: 620px; margin: 0 auto; padding: 60px 24px; text-align: center; }
+    .gr__badge { width: 64px; height: 64px; border-radius: 50%; background: #e4f6ee; color: var(--green);
+      display: inline-flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: 18px; }
+    .gr h1 { font-size: clamp(26px, 4vw, 34px); letter-spacing: -0.02em; }
+    .gr__key { display: flex; gap: 10px; align-items: center; justify-content: center; margin: 22px 0 8px; flex-wrap: wrap; }
+    .gr__key code { font-family: 'Cascadia Code', Consolas, monospace; font-size: 20px; font-weight: 700;
+      letter-spacing: 1px; background: #fff; border: 1px solid var(--border); border-radius: 10px;
+      padding: 12px 18px; color: var(--accent); }
+    .gr__steps { text-align: left; background: rgba(255,255,255,0.8); border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px 24px; margin: 28px 0; }
+    .gr__steps ol { margin: 0; padding-left: 20px; display: grid; gap: 10px; color: var(--text-soft); }
+    .gr__muted { color: var(--text-faint); font-size: 14px; }
+    .gr__spin { display: inline-block; width: 22px; height: 22px; border: 3px solid var(--border-strong);
+      border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="gr">
+    <div class="gr__badge">✓</div>
+    <h1>¡Gracias por tu compra!</h1>
+    <p class="gr__muted">Tu licencia de Libreta ya está lista. Esta es tu clave:</p>
+
+    <div id="estado">
+      <div class="gr__key"><span class="gr__spin" aria-label="Cargando"></span></div>
+      <p class="gr__muted">Preparando tu licencia…</p>
+    </div>
+
+    <div class="gr__steps">
+      <strong>Cómo activarla</strong>
+      <ol>
+        <li><a href="https://github.com/lopera606/libreta-updates/releases/latest/download/Libreta-Setup.exe">Descarga e instala Libreta</a> (Windows).</li>
+        <li>Abre la app → <strong>Licencia</strong> → pega tu clave y pulsa <strong>Activar</strong>.</li>
+        <li>Cada compra da <strong>N asientos</strong>: puedes activar la misma clave en tantos equipos como licencias hayas comprado.</li>
+      </ol>
+    </div>
+
+    <p class="gr__muted">¿Algún problema? Escríbenos a <a href="mailto:hola@libretadesk.com">hola@libretadesk.com</a>.</p>
+  </div>
+
+  <script>
+    // La verdad de la licencia vive en el Worker (/api). Esta pagina solo la muestra.
+    const API_BASE = '/api'; // mismo dominio cuando el Worker enruta libretadesk.com/api/*
+    const params = new URLSearchParams(location.search);
+    const sessionId = params.get('session_id');
+    const cont = document.getElementById('estado');
+
+    function pinta(html) { cont.innerHTML = html; }
+
+    function claveHTML(key) {
+      return `<div class="gr__key">
+          <code id="lic">${key}</code>
+          <button class="btn btn--ghost btn--sm" onclick="copiar()">Copiar</button>
+        </div>`;
+    }
+    window.copiar = () => {
+      const t = document.getElementById('lic')?.textContent || '';
+      navigator.clipboard?.writeText(t);
+    };
+
+    async function cargar(intentos = 0) {
+      if (!sessionId) {
+        pinta('<p class="gr__muted">No encontramos la sesión de compra. Revisa tu correo o escríbenos.</p>');
+        return;
+      }
+      try {
+        const r = await fetch(`${API_BASE}/checkout?session_id=${encodeURIComponent(sessionId)}`);
+        const d = await r.json();
+        if (d.ok && d.key) {
+          pinta(claveHTML(d.key) + `<p class="gr__muted">Guárdala. También te la enviamos por correo.</p>`);
+          return;
+        }
+        // el webhook puede tardar unos segundos; reintenta
+        if (intentos < 10) {
+          pinta('<div class="gr__key"><span class="gr__spin"></span></div><p class="gr__muted">Confirmando el pago…</p>');
+          setTimeout(() => cargar(intentos + 1), 2000);
+        } else {
+          pinta('<p class="gr__muted">Tu pago se está procesando. En unos minutos te llegará la clave por correo.</p>');
+        }
+      } catch (e) {
+        pinta('<p class="gr__muted">No pudimos cargar la clave ahora mismo. Te llegará por correo; o escríbenos.</p>');
+      }
+    }
+    cargar();
+  </script>
+</body>
+</html>
